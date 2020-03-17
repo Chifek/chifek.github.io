@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Firewall UFW | Hexo blog by Ismailov</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Пошаговая инструкция по установке UFW фаерволлаУстановка и настройка фаерволла занимает совсем немного времени. Всего несколько комманд. И так, первая комманда:1sudo apt install ufw После установки пр">
+<meta name="keywords" content="linux,by author,by linuxize.com,devOps,firewall,ubuntu 18.04">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Firewall UFW">
+<meta property="og:url" content="http://yoursite.com/2019/04/09/Firewall-UFW/index.html">
+<meta property="og:site_name" content="Hexo blog by Ismailov">
+<meta property="og:description" content="Пошаговая инструкция по установке UFW фаерволлаУстановка и настройка фаерволла занимает совсем немного времени. Всего несколько комманд. И так, первая комманда:1sudo apt install ufw После установки пр">
+<meta property="og:locale" content="ru">
+<meta property="og:image" content="https://linuxize.com/post/how-to-setup-a-firewall-with-ufw-on-ubuntu-18-04/ubuntu-ufw-status.jpg">
+<meta property="og:updated_time" content="2019-04-09T11:26:03.066Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Firewall UFW">
+<meta name="twitter:description" content="Пошаговая инструкция по установке UFW фаерволлаУстановка и настройка фаерволла занимает совсем немного времени. Всего несколько комманд. И так, первая комманда:1sudo apt install ufw После установки пр">
+<meta name="twitter:image" content="https://linuxize.com/post/how-to-setup-a-firewall-with-ufw-on-ubuntu-18-04/ubuntu-ufw-status.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo blog by Ismailov" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo blog by Ismailov</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS-каналы"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Поиск"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Firewall-UFW" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/09/Firewall-UFW/" class="article-date">
+  <time datetime="2019-04-09T10:55:21.000Z" itemprop="datePublished">2019-04-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Firewall UFW
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Пошаговая-инструкция-по-установке-UFW-фаерволла"><a href="#Пошаговая-инструкция-по-установке-UFW-фаерволла" class="headerlink" title="Пошаговая инструкция по установке UFW фаерволла"></a>Пошаговая инструкция по установке UFW фаерволла</h1><p>Установка и настройка фаерволла занимает совсем немного времени. Всего несколько комманд. И так, первая комманда:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ufw</span><br></pre></td></tr></table></figure></p>
+<p>После установки проверяем статус коммандой:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw status verbose</span><br></pre></td></tr></table></figure></p>
+<p>UFW по умолчанию будет выключен</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Status: inactive</span><br></pre></td></tr></table></figure>
+<p>Если все же UFW будет включен, то увидите примерно вот такие строки:</p>
+<p><img src="https://linuxize.com/post/how-to-setup-a-firewall-with-ufw-on-ubuntu-18-04/ubuntu-ufw-status.jpg" alt="output"></p>
+<h3 id="Активация-UFW"><a href="#Активация-UFW" class="headerlink" title="Активация UFW"></a>Активация UFW</h3><p>Для активации фаерволла выполните след. комманду:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw enable</span><br></pre></td></tr></table></figure></p>
+<p>Увидим след.предупреждение:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Command may disrupt existing ssh connections. Proceed with operation (y|n)? y</span><br><span class="line">Firewall is active and enabled on system startup</span><br></pre></td></tr></table></figure></p>
+<p>Нажимаем ‘Y’ и жмем Enter</p>
+<p>Готово, UFW запушен!</p>
+<h2 id="Открытие-нужных-портов"><a href="#Открытие-нужных-портов" class="headerlink" title="Открытие нужных портов"></a>Открытие нужных портов</h2><h3 id="Открыть-порт-80-HTTP"><a href="#Открыть-порт-80-HTTP" class="headerlink" title="Открыть порт 80 - HTTP"></a>Открыть порт 80 - HTTP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 80/tcp</span><br></pre></td></tr></table></figure>
+<h3 id="Открыть-порт-443-HTTPS"><a href="#Открыть-порт-443-HTTPS" class="headerlink" title="Открыть порт 443 - HTTPS"></a>Открыть порт 443 - HTTPS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 443/tcp</span><br></pre></td></tr></table></figure>
+<h3 id="Открыть-порт-8080"><a href="#Открыть-порт-8080" class="headerlink" title="Открыть порт 8080"></a>Открыть порт 8080</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 8080/tcp</span><br></pre></td></tr></table></figure>
+<h3 id="Разрешить-конкретные-IP-адреса"><a href="#Разрешить-конкретные-IP-адреса" class="headerlink" title="Разрешить конкретные IP-адреса"></a>Разрешить конкретные IP-адреса</h3><p>Чтобы разрешить доступ ко всем портам с вашего домашнего компьютера с IP-адресом 64.63.62.61, укажите с которого следует IP-адрес, который вы хотите добавить в белый список.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow from 64.63.62.61</span><br></pre></td></tr></table></figure>
+<h3 id="Разрешить-определенные-IP-адреса-на-конкретном-порту"><a href="#Разрешить-определенные-IP-адреса-на-конкретном-порту" class="headerlink" title="Разрешить определенные IP-адреса на конкретном порту"></a>Разрешить определенные IP-адреса на конкретном порту</h3><p>Чтобы разрешить доступ к определенному порту, скажем, через порт 22 вашей рабочей машины с IP-адресом 64.63.62.61, используйте любой порт, за которым следует номер порта:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow from 64.63.62.61 to any port 22</span><br></pre></td></tr></table></figure>
+<h3 id="Запретить-соединения"><a href="#Запретить-соединения" class="headerlink" title="Запретить соединения"></a>Запретить соединения</h3><p>Политика по умолчанию для всех входящих подключений настроена как запрещающая, и если вы не изменили ее, UFW заблокирует все входящие подключения, если вы не откроете это специально.</p>
+<p>Допустим, вы открыли порты 80 и 443, и ваш сервер подвергся атаке со стороны сети 23.24.25.0/24. Чтобы запретить все соединения с 23.24.25.0/24, вы можете использовать следующую команду:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw deny from 23.24.25.0/24</span><br></pre></td></tr></table></figure>
+<h3 id="Посмотреть-список-правил"><a href="#Посмотреть-список-правил" class="headerlink" title="Посмотреть список правил"></a>Посмотреть список правил</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw status numbered</span><br></pre></td></tr></table></figure>
+<p>Ответ будет такого вида:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Status: active</span><br><span class="line"></span><br><span class="line">     To                         Action      From</span><br><span class="line">     --                         ------      ----</span><br><span class="line">[ 1] 22/tcp                     ALLOW IN    Anywhere</span><br><span class="line">[ 2] 80/tcp                     ALLOW IN    Anywhere</span><br><span class="line">[ 3] 8080/tcp                   ALLOW IN    Anywhere</span><br></pre></td></tr></table></figure></p>
+<p>Для удаления определенного правила используйте ID, например:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw delete 2</span><br></pre></td></tr></table></figure></p>
+<p>Т.е. после выполнения данной команды, UFW удалит правило: “80/tcp”</p>
+<h3 id="Отключение-UFW"><a href="#Отключение-UFW" class="headerlink" title="Отключение UFW"></a>Отключение UFW</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw disable</span><br></pre></td></tr></table></figure>
+<p>На этом всё, надеюсь это поможет начинающим devOps’ам.</p>
+<h2 id="Автор-перевода"><a href="#Автор-перевода" class="headerlink" title="Автор перевода"></a>Автор перевода</h2><p> <strong>Исмаилов Руслан</strong> - <em>web developer</em> - <a href="https://github.com/Chifek" target="_blank" rel="noopener">Chifek</a></p>
+<h2 id="Оригинал"><a href="#Оригинал" class="headerlink" title="Оригинал"></a>Оригинал</h2><p><a href="https://linuxize.com/post/how-to-setup-a-firewall-with-ufw-on-ubuntu-18-04/" target="_blank" rel="noopener">How To Set Up a Firewall with UFW on Ubuntu 18.04</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/09/Firewall-UFW/" data-id="cju9pk7jh0000bwrtwisnh20j" class="article-share-link">Поделиться</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/by-author/">by author</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/by-linuxize-com/">by linuxize.com</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/devOps/">devOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/firewall/">firewall</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu-18-04/">ubuntu 18.04</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/09/Настройки-безопасности-SSH/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Предыдущий</strong>
+      <div class="article-nav-title">Настройки безопасности SSH</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Метки</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/by-author/">by author</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/by-linuxize-com/">by linuxize.com</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/by-ruhighload-com/">by ruhighload.com</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/devOps/">devOps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firewall/">firewall</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-blog/">hexo blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu-18-04/">ubuntu 18.04</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Облако меток</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/by-author/" style="font-size: 20px;">by author</a> <a href="/tags/by-linuxize-com/" style="font-size: 10px;">by linuxize.com</a> <a href="/tags/by-ruhighload-com/" style="font-size: 10px;">by ruhighload.com</a> <a href="/tags/devOps/" style="font-size: 20px;">devOps</a> <a href="/tags/firewall/" style="font-size: 10px;">firewall</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hexo-blog/" style="font-size: 10px;">hexo blog</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/ubuntu-18-04/" style="font-size: 10px;">ubuntu 18.04</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Архив</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">апрель 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">июль 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Недавние записи</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/09/Firewall-UFW/">Firewall UFW</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/09/Настройки-безопасности-SSH/">Настройки безопасности SSH</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/18/HEXO-блог/">HEXO блог</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Ruslan Ismailov<br>
+      Создано с помощью <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

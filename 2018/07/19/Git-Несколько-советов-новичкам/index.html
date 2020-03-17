@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Git. Несколько советов новичкам | ChiFek</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Несколько советов новичкам по GIT’у Правильно познанное разумом - истина, правильно познанное рассудком - реальность.@Артур Шопенгауэр  В нашу компанию часто набирают новых стажеров и большинство из н">
+<meta name="keywords" content="git,советы,gitlab,github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git. Несколько советов новичкам">
+<meta property="og:url" content="https://chifek.github.io/2018/07/19/Git-Несколько-советов-новичкам/index.html">
+<meta property="og:site_name" content="ChiFek">
+<meta property="og:description" content="Несколько советов новичкам по GIT’у Правильно познанное разумом - истина, правильно познанное рассудком - реальность.@Артур Шопенгауэр  В нашу компанию часто набирают новых стажеров и большинство из н">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://i0.wp.com/letsclearitup.com.ua/wp-content/uploads/2018/01/git.png?ssl=1">
+<meta property="og:image" content="https://git-scm.com/figures/18333fig0320-tn.png">
+<meta property="og:updated_time" content="2018-07-19T08:46:23.656Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git. Несколько советов новичкам">
+<meta name="twitter:description" content="Несколько советов новичкам по GIT’у Правильно познанное разумом - истина, правильно познанное рассудком - реальность.@Артур Шопенгауэр  В нашу компанию часто набирают новых стажеров и большинство из н">
+<meta name="twitter:image" content="https://i0.wp.com/letsclearitup.com.ua/wp-content/uploads/2018/01/git.png?ssl=1">
+  
+    <link rel="alternate" href="/atom.xml" title="ChiFek" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ChiFek</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://chifek.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Git-Несколько-советов-новичкам" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/19/Git-Несколько-советов-новичкам/" class="article-date">
+  <time datetime="2018-07-19T05:56:55.000Z" itemprop="datePublished">2018-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git. Несколько советов новичкам
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Несколько-советов-новичкам-по-GIT’у"><a href="#Несколько-советов-новичкам-по-GIT’у" class="headerlink" title="Несколько советов новичкам по GIT’у"></a>Несколько советов новичкам по GIT’у</h2><blockquote>
+<p>Правильно познанное разумом - истина, правильно познанное рассудком - реальность.<br>@Артур Шопенгауэр</p>
+</blockquote>
+<p>В нашу компанию часто набирают новых стажеров и большинство из них не работали с Git. Это и сподвигло меня написать данную статью.</p>
+<h2 id="Что-есть-Git"><a href="#Что-есть-Git" class="headerlink" title="Что есть Git?"></a>Что есть Git?</h2><p>Git (произн. «гит») — распределённая система управления версиями. Проект был создан Линусом Торвальдсом для управления разработкой ядра Linux, первая версия выпущена 7 апреля 2005 года. На сегодняшний день его поддерживает Джунио Хамано.<br><img src="https://i0.wp.com/letsclearitup.com.ua/wp-content/uploads/2018/01/git.png?ssl=1" alt="Git logo" title="git"></p>
+<h2 id="Как-работает-Git"><a href="#Как-работает-Git" class="headerlink" title="Как работает Git?"></a>Как работает Git?</h2><p>И так, представим, что вы работаете над проектом и вам ПМ дала задание. Вы начали изменять/дополнять, а то и вовсе создавать файлы в проекте. После выполнения задания вы отправляете все свои изменения на сервер (Git репозиторий), который хранит в себе все отправленные/измененные файлы (назовем их “коммиты”). В коммитах есть не только все изменения, он так же хранит в себе всю историю (Автора кода, время коммита, что вносилось, что удалялось и т.п.). При необходимости люди, допущенные к этому репозиторию могут посмотреть историю коммитов.</p>
+<blockquote>
+<p>СОВЕТ: Всегда называйте свои коммиты только на английском языке. Это подтянет ваш английский и поможет не растеряться англоговорящему коллеге (если такой есть или появится).</p>
+</blockquote>
+<p>А что дальше?</p>
+<p>Предположим, вы залили свой коммит на сервер. А в это время приступил к работе над тем же проектом ваш коллега. Ему ПМ тоже дала задание. Перед тем, как коллеге приступить к работе, ему необходимо проверить, есть ли изменения на сервере (Git репозитории) с помощью комманды <code>git pull</code>. Поскольку вы уже залили свои изменения на сервер, то при проверке ваш коллега увидит, что на сервере были изменения и команда написанная выше зальет ваши изменения к коллеге на локальный компьютер. Тем самым у вашего коллеги будет актуальная версия проекта.</p>
+<blockquote>
+<p>СОВЕТ: Всегда разделяйте коммиты по заданию. Если вы сделали например функцию отправки заказа, то назвать коммит необходимо что то вроде: “Added sendOrder function”. А если сменили цвет кнопки, то соответственно название коммита уже другое, например “Changed button color”.  </p>
+</blockquote>
+<h2 id="Что-такое-ветки-Git’a"><a href="#Что-такое-ветки-Git’a" class="headerlink" title="Что такое ветки Git’a?"></a>Что такое ветки Git’a?</h2><p>Обычно в проекте используются несколько веток. Есть самая основная, которая называется master. Есть и остальные, названия которых зависит от автора кода. Т.к. ветку создать и назвать может каждый, у кого есть доступ к репозиторию. </p>
+<p><img src="https://git-scm.com/figures/18333fig0320-tn.png" alt="Git branch" title="git branch"></p>
+<p>На рисунке видно, что данный репозиторий имеет 4 ветки, одна из которых называется master. В зачастую, самые стабильные версии лежат в этой ветке. Весь workflow конечно же зависит от места работы, от правил в компании.</p>
+<blockquote>
+<p>СОВЕТ: При создании ветки, необходимо придерживаться названия задания. Например если у вас задача называется: “Issue #15. Create users model”, то и логично ветку назвать “issue-15-create-users-model”.</p>
+</blockquote>
+<h2 id="Преимущества-Git"><a href="#Преимущества-Git" class="headerlink" title="Преимущества Git:"></a>Преимущества Git:</h2><ul>
+<li>всего одна директория .git со всей нужной информацией;</li>
+<li>локальность, высокая скорость работы;</li>
+<li>у каждого разработчика/пользователя имеется полная резервная копия основного репозитория;</li>
+<li>полный контроль над историей, перемещение коммитов между ветками;</li>
+<li>поддержка субмодулей и многое другое.</li>
+</ul>
+<h2 id="Первоначальная-настройка-Git’a"><a href="#Первоначальная-настройка-Git’a" class="headerlink" title="Первоначальная настройка Git’a:"></a>Первоначальная настройка Git’a:</h2><p>После установки Git’a необходимо настроить свое имя и email. Нужно это для идентификации в Git’e.<br>Можно это сделать след. командами:</p>
+<pre><code>$ git config --global user.name &quot;Имя Фамилия&quot;
+$ git config --global user.email ваш@почтовый.адрес
+</code></pre><p>На этом пока что остановлюсь. Чуть позже напишу продолжение. p.s. если у вас при прочтении появились комментарии, то можете прислать их на мою корпоративную почту (<a href="mailto:ruslan.ismailov@mavix.io" target="_blank" rel="noopener">ruslan.ismailov@mavix.io</a>)<br>Спасибо за внимание!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chifek.github.io/2018/07/19/Git-Несколько-советов-новичкам/" data-id="cjjsbam0c0001o94hmg749n44" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitlab/">gitlab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/советы/">советы</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/18/blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HEXO блог</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chifek/">chifek</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitlab/">gitlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kg/">kg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mavix-io/">mavix.io</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/советы/">советы</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/chifek/" style="font-size: 10px;">chifek</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/kg/" style="font-size: 10px;">kg</a> <a href="/tags/mavix-io/" style="font-size: 10px;">mavix.io</a> <a href="/tags/советы/" style="font-size: 10px;">советы</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/19/Git-Несколько-советов-новичкам/">Git. Несколько советов новичкам</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/18/blog/">HEXO блог</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Ruslan Ismailov<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
